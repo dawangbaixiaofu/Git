@@ -1,0 +1,19 @@
+git diff 显示两个不同分支的差异。
+有几种不同的格式
+	正常格式
+	上下文格式
+	合并格式
+比较常用的是合并格式。这种格式的详细见（自己搜索）
+
+git fetch origin master:temp
+把远程库中master分支内容拉倒本地库中的temp新建分支。
+git merge temp
+在本地库的master分支下合并temp分支到master分支。
+在合并之前需要查看两个分支的差异。使用命令是：
+	git diff master temp
+合并的时候，需要解决冲突的问题。
+
+最后在合并好的master分支上，进行编辑，最后再
+git push origin
+提交到远程库，默认的是master分支
+
