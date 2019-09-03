@@ -17,3 +17,5 @@ git merge temp
 git push origin
 提交到远程库，默认的是master分支
 
+git中的工作目录，索引，提交之间的区别
+git diff 在三者中进行对比的作用体现
