@@ -19,3 +19,27 @@ git push origin
 
 git中的工作目录，索引，提交之间的区别
 git diff 在三者中进行对比的作用体现
+
+--------------
+git log 
+--------------
+
+git log 命令：
+	可以查看提交commit history
+git log 默认会输出commit hash , author ,date, commit message
+	--oneline
+	简化命令，仅仅输出commit hash 前7个字符串和commit message
+	--stat
+	在git log 输出内容的基础上添加文件增删的统计数据
+	--p
+	控制输出每个commit具体修改的内容，输出的形式以diff的形式给出。
+	--author='username'
+	用来过滤commit,限定输出给定的用户
+	-n
+	n是数字，表示要输出的数量
+	--after 'date'
+	--before 'date'
+	限定指定日期范围的log
+
+	
+	
