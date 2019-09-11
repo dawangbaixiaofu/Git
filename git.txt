@@ -72,3 +72,11 @@ git checkout
 	1.操作文件
 	2.操作分支
 
+如何切换分支？
+如何在remote创建分支？
+	git push origin branch_name : branch_name
+如何merge request？
+	
+如何合并远程库中的不同分支？
+
+
