@@ -79,4 +79,7 @@ git checkout
 	
 如何合并远程库中的不同分支？
 
+如何使用git中的release功能？release的功能是什么？
+
+如何pull request？各种request功能如何实现？
 
