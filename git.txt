@@ -81,5 +81,14 @@ git checkout
 
 如何使用git中的release功能？release的功能是什么？
 
+
+
+git fork是从别人的远程库项目拉取拷贝到自己的远程库中，并建立联系。
+当被人的远程库中的项目内容改变的时候，可以提交pull request，进行更新。
+随时和别人的项目保持最新的进度。
+
 如何pull request？各种request功能如何实现？
+pull request 是对远程库来说的，对fork别人库中的项目进行更新。
+
+
 
