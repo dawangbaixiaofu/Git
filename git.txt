@@ -77,4 +77,13 @@ git checkout
 2019-10-04
 
 git log
+git reflog
+head@{移动到当前版本需要多少步}
+
+【推荐】基于索引值操作
+	索引值就是提交的时候哈希值
+	命令：
+	git reset --hard 索引值
+使用^符号
+使用~符号
 
