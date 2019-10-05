@@ -247,6 +247,43 @@ git merge origin/master
 -------------------
 协同开发冲突解决
 -------------------
+如果不是基于GitHub远程库的最新版所做的修改，不能推送，
+必须先拉取。
+拉取后如果进入冲突状态，按照“分支冲突解决”操作解决即可。
+
+
+-------------------
+跨团队协作
+-------------------
+首先fork到自己的远程库，再clone到自己的本地库
+添加所要添加的内容，push到自己的远程库。
+
+发送者
+	发送pull request
+	在GitHub中项目下Pull requests --new pull request
+	(comparing changes)**号标记出来
+	--create pull request
+	--（open a pull request )需要发消息给原项目的创建人
+接受者：
+	收到pull requests
+	--commits 查看所做的提交
+	--files changed 查看所做的修改
+	对代码进行审核，如果没有问题，回到
+	conversation下
+	--merge pull request
+	在合并的时候，可以添加相关的信息。
+	--confirm merge
+	最后将合并后的远程库，内容拉取到自己的本地库
+
+SSH免密登陆
+ssh-keygen -t rsa -C 邮箱
+git remote add origin_ssh（远程库地址别名）
+添加ssh地址到本地库
+
+
+
+
+
 
 
 何切换分支？
