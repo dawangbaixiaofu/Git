@@ -85,5 +85,145 @@ head@{移动到当前版本需要多少步}
 	命令：
 	git reset --hard 索引值
 使用^符号
+	只能往后，不能向前
+	git reset --hard HEAD^后退一步
+	git reset --hard HEASD^^后退两步
+
 使用~符号
+	git reset --hard HEAD~3 后退三步
+	只能后退
+
+git reset 命令三个参数对比：
+--soft
+	在本地库移动HEAD指针
+--hard
+	在本地库移动HEAD指针，重置暂存区，重置工作区
+--mixed
+	在本地库移动HEAD指针，重置暂存区
+
+使用git status查看残存区 index storage
+
+
+删除文件找回
+rm filename
+git add filename
+git commit filename -m 'commit message'
+
+回到未删除的版本
+git reset --hard index_code
+
+
+添加到暂存区的删除文件找回
+	已经执行的操作
+	rm filename
+	git add filename
+	希望能够在工作区找回已经删除的文件
+	git reset --hard HEAD
+	--hard能够恢复暂存区和工作区
+
+删除的文件能够找回的前提是：删除前，文件存在时候的状态
+提交到了本地库。
+
+git reset --hard 【指针位置】
+
+	删除操作已经提交到本地库，指针位置指向历史记录
+	删除操作尚未提交到本地库，指针位置使用HEAD
+
+比较文件的差异：
+git diff filename
+	将工作区文件和暂存区的文件进行比较
+git diff 本地库中历史版本 filename
+	将工作区文件和本地库历史版本文件比较
+	git diff HEAD filename
+	
+git diff 不带文件名称
+	比较多个文件
+
+----------
+git 分支
+----------
+新建的分支是从主分支中复制过来的
+创建分支
+	git branch branch_name
+切换分支
+	git checkout branch_name
+查看分支
+	git branch -v
+合并分支：
+	第一：切换到接受修改的分支【主分支】
+	第二：执行merge命令
+		git merge 分支名称
+解决冲突：
+	在主分支和bug分支上同时进行了修改。
+	git对文件的操作单位是行，进行行修改的时候，显示
+	修改的结果是1 insertion ， 1 deletion
+
+	合并冲突后，文件内容加上了新的标记
+	
+	<<<<<<<<<<<< HEAD
+	内容
+	==========
+	内容
+	>>>>>>>>>>> branch_name
+
+	<<<<<<<<< HEAD 和 =====之间的内容是当前分支内容
+	=======和 >>>>>>>branch_name是另外一个分支的内容
+
+	怎么解决？
+	删除符号标记，修改到自己想要的内容
+	使用git add 文件名 提交已经解决的冲突到暂存区
+	git commit -m 'Message ‘不能带文件名，提交合并到本地库
+	PS：git commit的时候不能带文件名
+
+------------
+GIT基本原理
+------------
+Hash
+特点：
+1. 不管输入数据的数据量有多大，输入一个哈希算法，得到的加密
+结果长度固定。
+
+2.Hash算法不可逆
+
+3.文件内容改变，输出改变--可用来文件的校验
+
+哈希算法种类：
+	SHA-1算法--git采用
+
+
+GIt保存版本的机制
+	git把数据看做是小型文件系统的一组快照，每次提交更新时候
+	GIt都会对当前全部文件制作一个快照并保存这个快照索引。如果文件
+	没有修改，git不再重新存储改文件，而是保存一个连接指向之前存储
+	的文件。所以Git的工作方式可以称之为快照流。
+
+git的“提交对象”
+	tree hash	--包含所有的文件（项目，文件夹）
+	file hash
+提交对象及其父对象形成的链条
+提交对象内容：
+
+	commit	size
+	tree hash
+	parent
+	author
+	committer
+
+Snapshot 
+
+Git 分支管理机制：
+root commit
+
+创建分支，git内部创建一个新的指针
+切换分支，切换指针
+
+-----------------
+GIthub
+-----------------
+本地库和远程库交互
+给远程地址起别名：
+git remote add origin(别名) address
+git remote -v 查看
+
+git push address branch_name
 
