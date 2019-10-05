@@ -235,3 +235,17 @@ git clone address
 远程库修改拉取：
 fetch + merge
 
+git fetch [远程地址库名][远程分支名]
+git fetch origin master
+git checkout [远程库名/远程分支名]
+去查看fetch的内容
+git checkout origin/master
+git merge origin/master
+
+= git pull origin master
+
+-------------------
+协同开发冲突解决
+-------------------
+
+
