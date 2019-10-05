@@ -227,3 +227,11 @@ git remote -v 查看
 
 git push address branch_name
 
+git clone address
+
+把新用户添加到团队
+在github中的settings -- collaborators 
+
+远程库修改拉取：
+fetch + merge
+
