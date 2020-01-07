@@ -1,3 +1,13 @@
+在git本地库建立好仓库以及在github上建立远程仓库后，
+需要把本地仓库与远程仓库进行关联，然后把本地仓库文件
+上传到github远程库中。
+git remote add origin https://github.com/username/test.git
+关联之后把本地库中所有的内容推送到远程仓库
+git push -u origin master
+
+
+
+
 git diff 显示两个不同分支的差异。
 有几种不同的格式
 	正常格式
