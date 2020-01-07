@@ -7,7 +7,8 @@ git remote add origin https://github.com/username/test.git
 关联之后把本地库中所有的内容推送到远程仓库
 git push -u origin master
 
-
+-u指定本地仓库和远程仓库哪一个分支之间建立连接。以后再次推送的时候
+就不需要在使用参数，默认就是推送到这个分支。
 
 
 git diff 显示两个不同分支的差异。
