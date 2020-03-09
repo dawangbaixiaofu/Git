@@ -322,12 +322,15 @@ pull request 是对远程库来说的，对fork别人库中的项目进行更新
 
 
 git satsh stash_name
+a.对文件进行修改后stash
 用于在本地建立新的分支，并对分支进行修改但是还没有进行提交。这个时候
 为了不影响本地master开发，即不要对本地磁盘文件进行修改。需要对新建的
 分支修改的内容进行隐藏。
 隐藏后可以进行回复，然后进行提交。git stash apply stash_name
 或者git stash pop stash_name
 不再使用的stash可以进行删除。git stash drop stash_name
-
+b.新增加一个文件，进行stash
+新增加的文件进行stash不能进行隐藏，必须对新增加的文件添加到暂存区，才能进行
+stash，即先执行git add new_file才能进行stash
 
 git中的diff算法？是核心
