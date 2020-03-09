@@ -320,4 +320,14 @@ git fork是从别人的远程库项目拉取拷贝到自己的远程库中，并
 pull request 是对远程库来说的，对fork别人库中的项目进行更新。
 
 
+
+git satsh stash_name
+用于在本地建立新的分支，并对分支进行修改但是还没有进行提交。这个时候
+为了不影响本地master开发，即不要对本地磁盘文件进行修改。需要对新建的
+分支修改的内容进行隐藏。
+隐藏后可以进行回复，然后进行提交。git stash apply stash_name
+或者git stash pop stash_name
+不再使用的stash可以进行删除。git stash drop stash_name
+
+
 git中的diff算法？是核心
