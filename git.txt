@@ -1,3 +1,18 @@
+如何处理大数据大于100M文件的本地仓库上传到远程库？
+
+在本地创建文件夹后，进行初始化，让其变成git本地仓库
+git init 
+在git本地库建立好仓库以及在github上建立远程仓库后，
+需要把本地仓库与远程仓库进行关联，然后把本地仓库文件
+上传到github远程库中。
+git remote add origin https://github.com/username/test.git
+关联之后把本地库中所有的内容推送到远程仓库
+git push -u origin master
+
+-u指定本地仓库和远程仓库哪一个分支之间建立连接。以后再次推送的时候
+就不需要在使用参数，默认就是推送到这个分支。
+
+
 git diff 显示两个不同分支的差异。
 有几种不同的格式
 	正常格式
@@ -317,3 +332,16 @@ pull request 是对远程库来说的，对fork别人库中的项目进行更新
 
 
 
+git satsh stash_name
+a.对文件进行修改后stash
+用于在本地建立新的分支，并对分支进行修改但是还没有进行提交。这个时候
+为了不影响本地master开发，即不要对本地磁盘文件进行修改。需要对新建的
+分支修改的内容进行隐藏。
+隐藏后可以进行回复，然后进行提交。git stash apply stash_name
+或者git stash pop stash_name
+不再使用的stash可以进行删除。git stash drop stash_name
+b.新增加一个文件，进行stash
+新增加的文件进行stash不能进行隐藏，必须对新增加的文件添加到暂存区，才能进行
+stash，即先执行git add new_file才能进行stash
+
+git中的diff算法？是核心
