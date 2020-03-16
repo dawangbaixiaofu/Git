@@ -332,7 +332,7 @@ pull request 是对远程库来说的，对fork别人库中的项目进行更新
 
 
 
-git satsh stash_name
+git stash stash_name
 a.对文件进行修改后stash
 用于在本地建立新的分支，并对分支进行修改但是还没有进行提交。这个时候
 为了不影响本地master开发，即不要对本地磁盘文件进行修改。需要对新建的
